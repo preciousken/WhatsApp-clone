@@ -26,8 +26,8 @@ font-family: 'Romanesco', cursive; */
 }
 i:not(.settings){
     color: white !important;
-    font-size: 15px;
-    cursor: pointer;
+    font-size: 20px;
+    /* cursor: pointer; */
     /* background-color: var(--gray); */
     border-radius: 10px;
     width: 85%;
@@ -42,7 +42,7 @@ i:not(.settings):hover{
 i.settings{
     font-size: 25px;
     color: white !important;
-    cursor: pointer;
+    /* cursor: pointer; */
     border-radius: 10px;
     width: 85%;
     text-align: center;
@@ -105,6 +105,19 @@ main > * {
 .small-sidebar > * > * {
     margin: 5px 0;
 }
-/* .bg-sidebar{
-    background-color: ;
-} */
+
+.bg-sidebar{
+    /* background-color: red; */
+    display: grid;
+    grid-template-rows: minmax(100px,60px) 1fr;
+}
+.bg-sidebar .container{
+    margin: 0 !important;
+    /* background-color: green; */
+}
+.bg-sidebar .container:nth-child(1){
+    border: 1px solid var(--gray);
+}
+.bg-sidebar .container:nth-child(2){
+    /* background-color: yellow; */
+}
