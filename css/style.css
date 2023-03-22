@@ -24,7 +24,7 @@ font-family: 'Romanesco', cursive; */
     --gray: rgba(80, 79, 79,0.4);
 
 }
-i{
+i:not(.settings){
     color: white !important;
     font-size: 15px;
     cursor: pointer;
@@ -34,6 +34,9 @@ i{
     text-align: center;
     padding: 8px 0;
     border-left: 1px solid var(--grn) ;
+}
+i.settings{
+    font-size: 25px;
 }
 .logo{
     width: 30px;
@@ -69,14 +72,27 @@ main > * {
     display: grid;
     grid-template-columns: minmax(50px, 20px) 1fr;
 }
+.sidebar-container .container:nth-child(1){
+   margin-top: 20px;
+}
+.sidebar-container .container:nth-child(2){
+    margin-bottom: 20px;
+}
 .small-sidebar{
     background-color: var(--blk);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.small-sidebar > * {
+    /* background-color: red; */
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     flex-direction: column;
 }
-.small-sidebar > * {
+.small-sidebar > * > * {
     margin: 5px 0;
 }
 /* .bg-sidebar{
