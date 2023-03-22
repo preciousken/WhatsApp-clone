@@ -28,15 +28,25 @@ i:not(.settings){
     color: white !important;
     font-size: 15px;
     cursor: pointer;
-    background-color: var(--gray);
+    /* background-color: var(--gray); */
     border-radius: 10px;
     width: 85%;
     text-align: center;
     padding: 8px 0;
+    border-left: 1px solid transparent ;
+}
+i:not(.settings):hover{
+    background-color: var(--gray);
     border-left: 1px solid var(--grn) ;
 }
 i.settings{
     font-size: 25px;
+    color: white !important;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 85%;
+    text-align: center;
+    padding: 8px 0;
 }
 .logo{
     width: 30px;
