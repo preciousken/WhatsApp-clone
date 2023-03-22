@@ -327,11 +327,22 @@ i.whatsapp{
     margin: 10px 0;
     color: var(--gray);
 }
-.message{
-    background-color: green;
-    width: 50%;
+.messageContainer{
+    /* background-color: red; */
     margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.message{
+    background-color: var(--gray);
+    width: 50%;
+    margin: 10px 20px;
     padding: 10px;
     border-radius: 10px;
-    max-width: 400px;
+    max-width: 500px;
+}
+.senderMessage{
+    background-color: rgba(0, 75, 128, 0.832);
+    margin-left: auto;
 }
