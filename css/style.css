@@ -357,3 +357,18 @@ i.whatsapp{
     border-radius: 10px;
     cursor: default;
 }
+
+
+.settings_popup{
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    max-height: 600px;
+    max-width: 500px;
+    border: none;
+    background-color: red;
+    position: fixed;
+    bottom: 0;
+    left: 10px;
+    border-radius: 10px;
+}
