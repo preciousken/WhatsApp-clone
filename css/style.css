@@ -169,7 +169,6 @@ flex-grow: 1;
     gap: 20px;
     flex-direction: column;
 
-
 }
 .bg-sidebar .container:nth-child(2) > *:nth-child(1){
     margin-top: 20px;
