@@ -261,6 +261,21 @@ flex-grow: 1;
     background-color: var(--Dblk);
     padding: 5px 10px;
     height: 60px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: space-between;
+}
+.chats-opened .container header > *{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.chats-opened .container header > *:nth-child(1){
+    margin: 0 10px;
+}
+.chats-opened .container header > *:nth-child(2){
+    justify-self: flex-end;
+    margin:0 10px;
 }
 
 
