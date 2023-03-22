@@ -20,18 +20,20 @@ font-family: 'Romanesco', cursive; */
     --wt: white;
     --Dblk: rgb(26, 23, 23);
     --blk:black;
-    --gray: gray;
+    --grn: green;
+    --gray: rgba(80, 79, 79,0.4);
 
 }
 i{
     color: white !important;
-    font-size: 20px;
+    font-size: 15px;
     cursor: pointer;
     background-color: var(--gray);
     border-radius: 10px;
-    width: 99%;
+    width: 85%;
     text-align: center;
     padding: 8px 0;
+    border-left: 1px solid var(--grn) ;
 }
 .logo{
     width: 30px;
