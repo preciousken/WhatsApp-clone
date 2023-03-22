@@ -31,6 +31,7 @@ font-family: 'Romanesco', cursive; */
     --blk:black;
     --grn: green;
     --gray: rgba(80, 79, 79,0.4);
+    --Dgray: rgba(26, 23, 23,0.94) ;
 
 }
 .nav:not(.settings){
@@ -209,4 +210,11 @@ flex-grow: 1;
     font-weight: 100;
     cursor: default;
     
+}
+.chats-closed{
+    background-image: linear-gradient(to right, var(--Dgray),var(--Dgray)), url(https://w0.peakpx.com/wallpaper/818/148/HD-wallpaper-whatsapp-background-cool-dark-green-new-theme-whatsapp.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
 }
