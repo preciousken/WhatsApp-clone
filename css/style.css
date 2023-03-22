@@ -3,6 +3,7 @@
     padding: 0;
     color: var(--wt);
     font-family: var(--Poppins);
+    font-weight: normal;
 }
 html,body{
     height: 100vh;
@@ -184,4 +185,24 @@ flex-grow: 1;
 }
 .bg-sidebar .container:nth-child(2)::-webkit-scrollbar-button{
     background-color: transparent;
+}
+.bg-sidebar .container:nth-child(2) .chat-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.bg-sidebar .container:nth-child(2) .chat-nav div:nth-child(2){
+    /* background-color: red; */
+    flex-grow: 1;
+}
+.bg-sidebar .container:nth-child(2) .chat-nav div:nth-child(2) p{
+    font-family: var(--Poppins);
+    cursor: default;
+}
+.bg-sidebar .container:nth-child(2) .chat-nav div:nth-child(2) small{
+    font-family: var(--Roboto);
+    font-weight: 100;
+    cursor: default;
+    
 }
