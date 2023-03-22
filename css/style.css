@@ -76,7 +76,7 @@ main{
     color: var(--wt);
     font-weight: normal;
     display: grid;
-    grid-template-columns:minmax(300px, 1fr) 4fr;
+    grid-template-columns:minmax(400px, 1fr) 4fr;
     height: 100%;
 }
 main > * {
