@@ -41,7 +41,7 @@ i{
     margin-left: 10px;
 }
 
-body{
+.home{
     display: grid;
     grid-template-columns: 1fr;
     height: 100vh;
