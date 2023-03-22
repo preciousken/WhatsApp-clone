@@ -7,6 +7,8 @@
 }
 html,body{
     height: 100vh;
+    max-height: 100vh;
+    overflow-y: hidden;
 }
 
 /* font-family: 'Poppins', sans-serif;
@@ -14,11 +16,13 @@ font-family: 'Roboto', sans-serif;
 font-family: 'Roboto Condensed', sans-serif;
 font-family: 'Romanesco', cursive; */
 
+
 :root{
     /* fonts */
     --Poppins: 'Poppins',sans-serif;
     --Roboto: 'Roboto Condensed', sans-serif;
     --Romanesco: 'Romanesco',cursive;
+    --Montserrat: 'Montserrat', sans-serif;
 
 
     /* colors */
@@ -114,7 +118,7 @@ main > * {
 .bg-sidebar{
     /* background-color: red; */
     display: grid;
-    grid-template-rows: minmax(100px,60px) 1fr;
+    grid-template-rows: minmax(60px,100px) minmax(200px, 0.8fr);
 }
 .bg-sidebar .container{
     margin: 0 10px !important;
@@ -201,7 +205,7 @@ flex-grow: 1;
     cursor: default;
 }
 .bg-sidebar .container:nth-child(2) .chat-nav div:nth-child(2) small{
-    font-family: var(--Roboto);
+    font-family: var(--Montserrat);
     font-weight: 100;
     cursor: default;
     
