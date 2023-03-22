@@ -284,15 +284,37 @@ flex-grow: 1;
     font-size: 30px;
 }
 .chats-opened .container footer{
-    background-color: red;
+    /* background-color: red; */
     position: absolute;
     width: 100%;
     bottom: 0;
     padding: 10px 0;
     height: 50px;
+    display: grid;
+    grid-template-columns: 0.5fr 4fr 0.5fr;
+    gap: 10px;
     background-color: var(--Dblk);
 }
-
+.chats-opened .container footer > * {
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.chats-opened .container footer > * i { 
+    color: gray;
+    font-size: 20px;
+}
+.chats-opened .container footer >*:nth-child(1) > * {
+    margin-left: 10px;
+}
+.chats-opened .container footer input{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    outline: none;
+}
 
 i.whatsapp{
     font-size: 90px;
