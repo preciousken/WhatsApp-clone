@@ -244,14 +244,14 @@ flex-grow: 1;
     /* ///..// */
     /* display: none !important; */
     /* ///..// */
+    position: relative;
     background-image: linear-gradient(to right, var(--Dgray),var(--Dgray)), url(https://w0.peakpx.com/wallpaper/818/148/HD-wallpaper-whatsapp-background-cool-dark-green-new-theme-whatsapp.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 100%;
     display: grid;
-    /* justify-content: center;
-    align-items: center; */
+    
 }
 
 /* .chats-opened .container{    
@@ -272,12 +272,26 @@ flex-grow: 1;
 }
 .chats-opened .container header > *:nth-child(1){
     margin: 0 10px;
+    cursor: default;
 }
 .chats-opened .container header > *:nth-child(2){
     justify-self: flex-end;
     margin:0 10px;
+    display: flex;
+    gap: 30px;
 }
-
+.chats-opened .container header > *:nth-child(2) > *{
+    font-size: 30px;
+}
+.chats-opened .container footer{
+    background-color: red;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 10px 0;
+    height: 50px;
+    background-color: var(--Dblk);
+}
 
 
 i.whatsapp{
