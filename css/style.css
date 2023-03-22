@@ -28,7 +28,7 @@ font-family: 'Romanesco', cursive; */
     --gray: rgba(80, 79, 79,0.4);
 
 }
-i:not(.settings){
+.nav:not(.settings){
     color: white !important;
     font-size: 20px;
     /* cursor: pointer; */
@@ -39,7 +39,7 @@ i:not(.settings){
     padding: 8px 0;
     border-left: 1px solid transparent ;
 }
-i:not(.settings):hover{
+.nav:not(.settings):hover{
     background-color: var(--gray);
     border-left: 1px solid var(--grn) ;
 }
@@ -142,15 +142,20 @@ flex-grow: 1;
     display: flex;
     outline: 1px solid var(--gray);
     border-radius: 10px;
-    /* border-bottom: 1px solid var(--gray); */
+    border-bottom: 1px solid var(--gray);
+    align-items: center;
     justify-content: space-between;
 }
 .bg-sidebar .container .content:nth-child(2) input{
     background-color: transparent;
     border: none;
     outline: none;
-    padding: 5px;
+    padding: 5px 10px;
+    width: 80%;
     color: var(--wt);
+}
+.bg-sidebar .container .content .edit >*:nth-child(2){
+    margin-left: 30px;
 }
 
 
