@@ -346,3 +346,14 @@ i.whatsapp{
     background-color: rgba(0, 75, 128, 0.832);
     margin-left: auto;
 }
+
+.to_bottom{
+    position: fixed;
+    bottom: 100px;
+    right: 50px;
+    background-color: var(--gray);
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: default;
+}
