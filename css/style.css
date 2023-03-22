@@ -306,7 +306,13 @@ flex-grow: 1;
     font-size: 20px;
 }
 .chats-opened .container footer >*:nth-child(1) > * {
-    margin-left: 10px;
+    margin-left: 20px;
+}
+.chats-opened .container footer >*:nth-child(3){
+    justify-self: flex-end;
+}
+.chats-opened .container footer >*:nth-child(3) > * {
+    margin-right: 20px;
 }
 .chats-opened .container footer input{
     width: 100%;
