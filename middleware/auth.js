@@ -5,8 +5,6 @@ const User = require('../model/user');
 
 const tokenRequired = async (req,res,next)=>{
 
-    // getting the form Data
-    body = req.body
 
     // token
     let token = req.headers.whatsapp_token
@@ -48,7 +46,6 @@ const tokenRequired = async (req,res,next)=>{
         return;
       }
     
-    // querying the database if user exist
 
     try {
 

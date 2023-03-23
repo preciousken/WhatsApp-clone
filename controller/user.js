@@ -7,7 +7,12 @@ const jwt = require('jsonwebtoken');
 const SignUp = async (req,res)=>{
 
     // getting the form data
-    const body = req.body;
+    let body = req.body;
+
+    // converting to lowerCase
+    body.email = req.body.email.toLowerCase()
+    body.userName = req.body.userName.toLowerCase()
+    
 
     // handling Data Error
     if(!body.password ||
