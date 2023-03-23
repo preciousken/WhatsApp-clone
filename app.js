@@ -1,5 +1,6 @@
 const express = require('express');
 const userRouter = require('./routes/user');
+const messageRouter = require('./routes/message');
 const app = express()
 require('dotenv').config();
 
@@ -13,7 +14,8 @@ app.get('/',async(req,res)=>{
     })
 
 
-app.use('/user',userRouter)
+app.use('/user',userRouter);
+app.use('/message',messageRouter)
 
 port = process.env.PORT
 app.listen(port,()=>{

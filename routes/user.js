@@ -1,8 +1,12 @@
 const express = require('express')
 const userRouter = express.Router()
-const {CreateUser} = require('../controller/user')
+const {SignUp,SignIn} = require('../controller/user')
+const { tokenRequired } = require('../middleware/auth')
 
-// create User
-userRouter.post('/signup',CreateUser)
+// signup user
+userRouter.post('/signup',SignUp)
+
+// login user
+userRouter.post('/signin',SignIn)
 
 module.exports = userRouter
