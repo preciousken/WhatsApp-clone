@@ -23,15 +23,6 @@ const sendMessage = async (req,res)=>{
         return;
     }
 
-    // User must not message himself
-    if(body.senderId === body.receiverId){
-        res.status(500).json({
-            error : 'DATA_ERROR',
-            status:false,
-            message:`You've got some errors`
-        })
-        return;
-    }
 
     // query the database if receiver exists
     const receiver = await User.findById(body.receiverId);
@@ -52,6 +43,18 @@ const sendMessage = async (req,res)=>{
 
     body.senderName = user.userName;
     body.receiverName = receiver.userName
+
+    
+    // User must not message himself
+    if(body.senderId.toString() === body.receiverId.toString()){
+        res.status(500).json({
+            error : 'DATA_ERROR',
+            status:false,
+            message:`You've got some errors`
+        })
+        return;
+    }
+
 
 try {
 
