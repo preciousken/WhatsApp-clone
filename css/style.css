@@ -5,11 +5,12 @@
     font-family: var(--Poppins);
     font-weight: normal;
 }
-html,body{
+/* html,body{
     height: 100vh;
     max-height: 100vh;
     overflow-y: hidden;
-}
+} */
+
 
 /* font-family: 'Poppins', sans-serif;
 font-family: 'Roboto', sans-serif;
