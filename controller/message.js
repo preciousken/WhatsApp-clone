@@ -1,7 +1,8 @@
+// getting required components
 const Message = require("../model/message")
 const User = require("../model/user")
 
-// send message
+// Everything related to sending of messages
 const sendMessage = async (req,res)=>{
 
     // getting the form Data
@@ -78,4 +79,82 @@ try {
 }
 }
 
-module.exports = {sendMessage}
+
+// getting messages by Receiver Id
+const getMessages = async(req,res) => {
+    try {
+
+        // getting the form data
+        body = req.body
+        let user = req.user
+
+        // handling error if no receiver Id provided
+        if(!body.receiverId){
+            res.status(500).json({
+                error : 'UNKNOWN_ERROR',
+                status:false,
+                message:`No receiver provided`
+            })
+            return;
+        }
+
+        // query database if the receiverId exists
+        const exist = await User.findById(body.receiverId);
+
+
+        // handling error if the Id doesn't exist
+        if(!exist){
+            res.status(401).json({
+                error : 'RECEIVER_ERROR',
+                status:false,
+                message:`You've got some errors`
+            })
+            return;
+        }
+
+
+            // querying the db for messages
+            const messages = await Message.find({
+                $or:[
+                   {$and:[
+                    {receiverId: user._id},
+                    {senderId : body.receiverId}
+                   ]},
+
+                   {$and:[
+                    {receiverId: body.receiverId},
+                    {senderId : user._id}
+                   ]},
+                ]
+            })
+
+
+            // if no message fount
+            if(!messages){
+                res.status(401).json({
+                    error : 'MESSAGE_ERROR',
+                    status:false,
+                    message:`You've got some errors`
+                })
+                return;
+            }
+        
+    res.status(400).json({
+        status:true,
+        message:`Messages retrieved successfully`,
+        Data: messages
+    })
+    return;
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            error : 'UNKNOWN_ERROR',
+            status:false,
+            message:`You've got some errors`
+        })
+        return;
+    }
+}
+
+
+module.exports = {sendMessage,getMessages}
