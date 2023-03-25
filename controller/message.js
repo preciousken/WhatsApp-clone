@@ -128,16 +128,6 @@ const getMessages = async(req,res) => {
                 ]
             })
 
-
-            // if no message fount
-            if(!messages){
-                res.status(401).json({
-                    error : 'MESSAGE_ERROR',
-                    status:false,
-                    message:`You've got some errors`
-                })
-                return;
-            }
         
     res.status(400).json({
         status:true,
