@@ -5,11 +5,11 @@
     font-family: var(--Poppins);
     font-weight: normal;
 }
-/* html,body{
+html,body{
     height: 100vh;
     max-height: 100vh;
-    overflow-y: hidden;
-} */
+    /* overflow-y: hidden; */
+}
 
 
 /* font-family: 'Poppins', sans-serif;
@@ -85,7 +85,7 @@ main{
     font-weight: normal;
     display: grid;
     grid-template-columns:minmax(400px, 1fr) 4fr;
-    height: 100%;
+    /* height: 100%; */
 }
 main > * {
     border-right: 1px solid var(--blk);
