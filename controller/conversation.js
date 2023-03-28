@@ -200,4 +200,149 @@ const getPinnedChat = async (req,res)=>{
 }
 
 
-module.exports={pinChat,unpinChat,getPinnedChat}
+// Everything related to achieve a conversation
+const achieveConversation = async (req,res)=>{
+     // getting the form data
+     body = req.body
+     let user = req.user
+     
+     // handling error if no conversationId provided
+     if(!body.conversationId){
+         res.status(401).json({
+             error : 'DATA_ERROR',
+             status:false,
+             message:`You've got some errors`
+         })
+         return;
+     }
+ 
+      // query the database for conversationId
+      const conversation = await Conversation.findOne({
+        $and:[
+         { $or:[{receiverId: user._id}, {senderId : user._id} ]},
+         {_id: body.conversationId}
+        ]
+     })
+     
+     // handling error when conversation doesn't exists
+     if(!conversation){
+         res.status(401).json({
+             error : 'DATA_ERROR',
+             status:false,
+             message:`No such conversation`
+         })
+         return;
+     }
+ 
+     if(conversation){
+         // UPDATE THE USER'S PIN CONVERSATION (if the user's senderId was saved in databse, turn the 
+         // isPinned by sender true and vise versa)
+         await Conversation.findByIdAndUpdate(
+             body.conversationId,
+             {
+                isAchievedBySender : 
+                 user._id.toString() === conversation.senderId? true: conversation.isAchievedBySender,
+                isAchievedByReceiver: 
+                 user._id.toString() === conversation.receiverId? true: conversation.isAchievedByReceiver,
+             },
+             {new:true}
+         )
+    
+     }
+ 
+ 
+     try {
+         res.status(400).json({
+             status:true,
+             message:`Conversation achieved successfully`,
+             // Data: user
+         })
+         return;
+     } catch (error) {
+         console.log(error);
+         res.status(500).json({
+             error : 'UNKNOWN_ERROR',
+             status:false,
+             message:`You've got some errors`
+         })
+         return;
+     }
+}
+
+// Everything related to unachieve a chat
+const unAchieveConversation = async (req,res)=>{
+  // getting the form data
+  body = req.body
+  let user = req.user
+  
+  // handling error if no conversationId provided
+  if(!body.conversationId){
+      res.status(401).json({
+          error : 'DATA_ERROR',
+          status:false,
+          message:`You've got some errors`
+      })
+      return;
+  }
+
+   // query the database for conversationId
+   const conversation = await Conversation.findOne({
+     $and:[
+      { $or:[{receiverId: user._id}, {senderId : user._id} ]},
+      {_id: body.conversationId}
+     ]
+  })
+  
+  // handling error when conversation doesn't exists
+  if(!conversation){
+      res.status(401).json({
+          error : 'DATA_ERROR',
+          status:false,
+          message:`No such conversation`
+      })
+      return;
+  }
+
+  if(conversation){
+      // UPDATE THE USER'S PIN CONVERSATION (if the user's senderId was saved in databse, turn the 
+      // isPinned by sender false and vise versa)
+      await Conversation.findByIdAndUpdate(
+          body.conversationId,
+          {
+            isAchievedBySender : 
+              user._id.toString() === conversation.senderId? false: conversation.isAchievedBySender,
+            isAchievedByReceiver: 
+              user._id.toString() === conversation.receiverId? false: conversation.isAchievedByReceiver,
+          },
+          {new:true}
+      )
+ 
+  }
+
+
+  try {
+      res.status(400).json({
+          status:true,
+          message:`Conversation unachieved successfully`,
+          // Data: user
+      })
+      return;
+  } catch (error) {
+      console.log(error);
+      res.status(500).json({
+          error : 'UNKNOWN_ERROR',
+          status:false,
+          message:`You've got some errors`
+      })
+      return;
+  }
+}
+
+
+module.exports={
+    pinChat,
+    unpinChat,
+    getPinnedChat,
+    achieveConversation,
+    unAchieveConversation
+}
