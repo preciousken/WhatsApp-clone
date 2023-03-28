@@ -42,9 +42,9 @@ const pinChat = async(req,res)=>{
             body.conversationId,
             {
                 isPinnedBySender : 
-                user._id.toString() === conversation.senderId? true: false,
+                user._id.toString() === conversation.senderId? true: conversation.isPinnedBySender,
             isPinnedByReceiver: 
-                user._id.toString() === conversation.receiverId? true: false,
+                user._id.toString() === conversation.receiverId? true: conversation.isPinnedByReceiver,
             },
             {new:true}
         )
