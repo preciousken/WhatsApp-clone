@@ -8,12 +8,27 @@ const conversationSchema = mongoose.Schema({
     receiverId: {
         type: String,
         required: true,
+    }, 
+    receiverName:{
+        type: String,
+        required:true,
     },
-    isPinned:{
+    latestMessage:{
+        type:String,
+    },
+    isPinnedBySender:{
         type: Boolean,
         default:false,
     },
-    isAchieved:{
+    isPinnedByReceiver:{
+        type: Boolean,
+        default:false,
+    },
+    isAchievedBySender:{
+        type: Boolean,
+        default:false,
+    },
+    isAchievedByReceiver:{
         type: Boolean,
         default:false,
     }

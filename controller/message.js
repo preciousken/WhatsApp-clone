@@ -41,16 +41,29 @@ const sendMessage = async (req,res)=>{
 
     // check qeury the db for conversation
     const conversation = await Conversation.findOne({
-        senderId:body.senderId.toString() ,
-        receiverId:body.receiverId.toString() ,
+        $or:[
+            {$and:[
+             {receiverId: user._id},
+             {senderId : body.receiverId}
+            ]},
+
+            {$and:[
+             {receiverId: body.receiverId},
+             {senderId : user._id}
+            ]},
+         ]
     })
 
 
     if(!conversation){
+        // query the receiver From the DB
+        const {userName} = await User.findById(body.receiverId)
         // create a conversation
         const newConversation = new Conversation({
             senderId: body.senderId,
             receiverId: body.receiverId,
+            receiverName: userName,
+            latestMessage: body.message
         })
 
         const status = await newConversation.save()
@@ -84,7 +97,24 @@ const sendMessage = async (req,res)=>{
         return;
     }
 
-    
+    // (1) locate the conversation
+    // (2) update the latestMessage
+     await Conversation.findOneAndUpdate({
+        $or:[
+            {$and:[
+             {receiverId: user._id},
+             {senderId : body.receiverId}
+            ]},
+
+            {$and:[
+             {receiverId: body.receiverId},
+             {senderId : user._id}
+            ]},
+         ]
+    },
+    {latestMessage:body.message},
+    {new:true}
+    )
 
 try {
 
