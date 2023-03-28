@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: var(--Roboto);
+    font-family: var(--Poppins);
     font-weight: normal;
 }
 
@@ -23,11 +23,13 @@ font-family: 'Romanesco', cursive; */
     /* colors */
     --wt: white;
     --Dblk: rgb(26, 23, 23);
+    --DDblk: rgb(17, 15, 15);
     --blk:black;
     --grn: green;
     --gray: rgba(80, 79, 79,0.4);
     --Deepgray: rgba(80, 79, 79,3);
     --Dgray: rgba(26, 23, 23,0.94) ;
+    --Egray: rgba(26, 23, 23, 0.925) ;
     --Ngray:rgb(166, 164, 164) ;
 
 }
@@ -37,9 +39,10 @@ font-family: 'Romanesco', cursive; */
     max-height: 100vh;
     overflow-y: hidden;
     display: grid;
-    grid-template-columns: 80px minmax(200px,350px) 1fr;
+    grid-template-columns: 80px minmax(200px,400px) 1fr;
     grid-template-rows: 1fr;
-    background-color:var(--blk);
+    /* background-color:var(--blk); */
+    background-color:var(--DDblk);
     /* overflow-y: hidden; */
 }
 .mainContainer{
@@ -84,9 +87,9 @@ font-family: 'Romanesco', cursive; */
     background-color: var(--Dblk);
     position: relative;
 }
-.mainContainer.second > .container{
-    /* border: 1px solid red; */
-}
+/* .mainContainer.second > .container{
+    border: 1px solid red;
+}  */
 .mainContainer.second > .container.first{
     background-color: var(--Dblk);
     color: var(--wt);
@@ -127,6 +130,10 @@ font-family: 'Romanesco', cursive; */
     border: none;
     margin-left: 10px;
     outline: none;
+    color: var(--wt);
+}
+.mainContainer.second .container.first .content form input::placeholder{
+    color: var(--DDgray);
 }
 .mainContainer.second .container.first .content form .btn{
     width: 18%;
@@ -138,9 +145,7 @@ font-family: 'Romanesco', cursive; */
     color: var(--wt);
 }
 
-.mainContainer.third {
-    background-image: linear-gradient(left to right, red,green), url("https://e0.pxfuel.com/wallpapers/497/150/desktop-wallpaper-hopped-the-original-background-if-you-want-to-use-whatsapp-dark-mode-go-to-settings-chats-background-and-use-this-r-whatsapp.jpg") !important;
-}
+
 
 .mainContainer.second > .container.second{
     color: var(--wt);
@@ -183,3 +188,36 @@ font-family: 'Romanesco', cursive; */
 .mainContainer.second > .container.second .content div > small{
     color: var(--Ngray);
 }
+
+.closed-chat{
+    /* ///// */
+    display: none !important;
+    background-image: linear-gradient( var(--Egray),var(--Egray)), url(https://swall.teahub.io/photos/small/70-707627_whats-app-background.jpg) ;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.opened-chat{
+    background-color: var(--gray)!important;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+}   
+.opened-chat > * {
+    flex-grow: 1;
+}
+.opened-chat header{
+    background-color:var(--Dblk);
+    padding: 10px;
+    position: sticky !important;
+    top: 0;
+
+}
+/* .opened-chat section{
+    background-color: green;
+} */

@@ -1,0 +1,14 @@
+@media screen and (max-width: 600px) {
+    .home{
+
+        height: 100vh;
+        max-height: 100vh;
+        overflow-y: hidden;
+        display: grid;
+        grid-template-columns: 0px minmax(200px,1fr) 0;
+        grid-template-rows: 1fr;
+        /* background-color:var(--blk); */
+        background-color:var(--DDblk);
+        /* overflow-y: hidden; */
+    }
+}
