@@ -37,7 +37,6 @@ const SignUp = async (req,res)=>{
     // query the database if phone already exists
     const phone = await User.findOne({phone:body.phone})
 
-
     // handling error if eMail or userName exists
     if( eMail || userName || phone){
         res.status(401).json({
