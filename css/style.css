@@ -28,6 +28,7 @@ font-family: 'Romanesco', cursive; */
     --gray: rgba(80, 79, 79,0.4);
     --Deepgray: rgba(80, 79, 79,3);
     --Dgray: rgba(26, 23, 23,0.94) ;
+    --Ngray:rgb(166, 164, 164) ;
 
 }
 .home{
@@ -36,7 +37,7 @@ font-family: 'Romanesco', cursive; */
     max-height: 100vh;
     overflow-y: hidden;
     display: grid;
-    grid-template-columns: 80px minmax(200px,400px) 1fr;
+    grid-template-columns: 80px minmax(200px,350px) 1fr;
     grid-template-rows: 1fr;
     background-color:var(--blk);
     /* overflow-y: hidden; */
@@ -155,13 +156,30 @@ font-family: 'Romanesco', cursive; */
     flex-grow: 1;
     display: flex;
     /* justify-content: space-between; */
-    gap: 10px;
+    gap: 20px;
     align-items: center;
-    padding: 0 10px;
+    padding: 15px 10px;
     cursor: default;
+    border-radius: 10px;
+}
+.mainContainer.second > .container.second .content:hover{
+    background-color: var(--gray);
+}
+.mainContainer.second > .container.second .content div {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 .mainContainer.second > .container.second .content div > * {
     font-family: var(--Poppins);
     font-weight: normal ;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
     /* color: red ; */
+    /* background-color: red; */
+}
+.mainContainer.second > .container.second .content div > small{
+    color: var(--Ngray);
 }
