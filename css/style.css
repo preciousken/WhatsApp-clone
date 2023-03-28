@@ -1,14 +1,8 @@
 *{
     margin: 0;
     padding: 0;
-    color: var(--wt);
-    font-family: var(--Poppins);
+    font-family: var(--Roboto);
     font-weight: normal;
-}
-html,body{
-    height: 100vh;
-    max-height: 100vh;
-    /* overflow-y: hidden; */
 }
 
 
@@ -36,340 +30,138 @@ font-family: 'Romanesco', cursive; */
     --Dgray: rgba(26, 23, 23,0.94) ;
 
 }
-.nav:not(.settings){
-    color: white !important;
-    font-size: 20px;
-    /* cursor: pointer; */
-    /* background-color: var(--gray); */
-    border-radius: 10px;
-    width: 85%;
-    text-align: center;
-    padding: 8px 0;
-    border-left: 1px solid transparent ;
-}
-.nav:not(.settings):hover{
-    background-color: var(--gray);
-    border-left: 1px solid var(--grn) ;
-}
-i.settings{
-    font-size: 25px;
-    color: white !important;
-    /* cursor: pointer; */
-    border-radius: 10px;
-    width: 85%;
-    text-align: center;
-    padding: 8px 0;
-}
-.logo{
-    width: 30px;
-    border-radius:50% ;
-    margin-left: 10px;
-}
-
 .home{
-    display: grid;
-    grid-template-columns: 1fr;
+
     height: 100vh;
-    background-color: var(--Dblk);
-    grid-template-rows: minmax(50px,20px) 1fr;
-}
-header{
-    background-color: var(--blk);
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-main{
-    font-family: var(--Poppins);
-    color: var(--wt);
-    font-weight: normal;
+    max-height: 100vh;
+    overflow-y: hidden;
     display: grid;
-    grid-template-columns:minmax(400px, 1fr) 4fr;
-    /* height: 100%; */
+    grid-template-columns: 80px minmax(200px,400px) 1fr;
+    grid-template-rows: 1fr;
+    background-color:var(--blk);
+    /* overflow-y: hidden; */
 }
-main > * {
-    border-right: 1px solid var(--blk);
-}
-.sidebar-container{
-    display: grid;
-    grid-template-columns: minmax(50px, 20px) 1fr;
-}
-.sidebar-container .container:nth-child(1){
-   margin-top: 20px;
-}
-.sidebar-container .container:nth-child(2){
-    margin-bottom: 20px;
-}
-.small-sidebar{
-    background-color: var(--blk);
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.small-sidebar > * {
-    /* background-color: red; */
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    flex-direction: column;
-}
-.small-sidebar > * > * {
-    margin: 5px 0;
-}
-
-.bg-sidebar{
-    /* background-color: red; */
-    display: grid;
-    grid-template-rows: minmax(60px,100px) minmax(200px, 0.8fr);
-}
-.bg-sidebar .container{
-    margin: 0 10px !important;
-    /* background-color: green; */
-}
-/* bg-sidebar header */
-.bg-sidebar .container:nth-child(1){
-    padding-top: 20px ;
-    /* border: 1px solid var(--gray); */
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
-.bg-sidebar .container:nth-child(1) {
-/* background-color: red; */
-flex-grow: 1;
-}
-.bg-sidebar .container .content:nth-child(1){
-    /* background-color: green; */
-    display: flex;
-    flex-direction: row !important;
-    justify-content: space-between;
-    padding: 10px 0;
-}
-.bg-sidebar .container .content:nth-child(2){
-    display: flex;
-    outline: 1px solid var(--gray);
-    border-radius: 10px;
-    border-bottom: 1px solid var(--grn);
-    align-items: center;
-    justify-content: space-between;
-}
-.bg-sidebar .container .content:nth-child(2) input{
-    background-color: transparent;
-    border: none;
-    outline: none;
-    padding: 5px 10px;
-    width: 80%;
-    color: var(--wt);
-}
-.bg-sidebar .container .content .edit >*:nth-child(2){
-    margin-left: 30px;
-}
-.bg-sidebar .container .content .chat{
-    font-size: 16px;
-}
-
-/* bg-sidebar body */
-.bg-sidebar .container:nth-child(2){
-    /* background-color: green; */
+.mainContainer{
+    /* border: 1px solid red; */
     overflow-y: scroll;
-    display: flex;    
-    gap: 20px;
-    flex-direction: column;
-
+    overflow-x: hidden;
 }
-.bg-sidebar .container:nth-child(2) > *:nth-child(1){
-    margin-top: 20px;
-}
-.bg-sidebar .container:nth-child(2) > * {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: var(--gray);
-}
-.bg-sidebar .container:nth-child(2)::-webkit-scrollbar{
+.mainContainer::-webkit-scrollbar{
     background-color: transparent;
+    width: 5px;
 }
-.bg-sidebar .container:nth-child(2)::-webkit-scrollbar-button{
-    background-color: transparent;
+.mainContainer::-webkit-scrollbar-thumb{
+    background-color: var(--wt);
+    border-radius: 10px;
+    height: 20px !important;
 }
-.bg-sidebar .container:nth-child(2) .chat-nav{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-.bg-sidebar .container:nth-child(2) .chat-nav div:nth-child(2){
-    /* background-color: red; */
-    flex-grow: 1;
-}
-.bg-sidebar .container:nth-child(2) .chat-nav div:nth-child(2) p{
-    font-family: var(--Poppins);
-    cursor: default;
-}
-.bg-sidebar .container:nth-child(2) .chat-nav div:nth-child(2) small{
-    font-family: var(--Montserrat);
-    font-weight: 100;
-    cursor: default;
-    
-}
-/* /////////  CLOSED  */ 
-.chats-closed{
-    /* ///..// */
-    display: none !important;
-    /* ///..// */
-    background-image: linear-gradient(to right, var(--Dgray),var(--Dgray)), url(https://w0.peakpx.com/wallpaper/818/148/HD-wallpaper-whatsapp-background-cool-dark-green-new-theme-whatsapp.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 100%;
+.mainContainer.first{
+    color: var(--wt);
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-.chats-closed .container{
-    /* background-color: red; */
-    text-align: center;
-}
-.chats-closed .container h1{
-    font-size: 1.2rem;
-}
-.chats-closed .container p{
-    color: var(--Deepgray);
-}
-
-
-/* /////////  OPENED  */ 
-.chats-opened{
-    /* ///..// */
-    /* display: none !important; */
-    /* ///..// */
-    position: relative;
-    background-image: linear-gradient(to right, var(--Dgray),var(--Dgray)), url(https://w0.peakpx.com/wallpaper/818/148/HD-wallpaper-whatsapp-background-cool-dark-green-new-theme-whatsapp.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 100%;
-    display: grid;
-    
-}
-
-/* .chats-opened .container{    
-} */
-
-.chats-opened .container header{
-    background-color: var(--Dblk);
-    padding: 5px 10px;
-    height: 60px;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
+    flex-direction: column;
     justify-content: space-between;
 }
-.chats-opened .container header > *{
+.mainContainer.first > .container{
+    /* border: 1px solid red; */
     display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.chats-opened .container header > *:nth-child(1){
-    margin: 0 10px;
-    cursor: default;
-}
-.chats-opened .container header > *:nth-child(2){
-    justify-self: flex-end;
-    margin:0 10px;
-    display: flex;
-    gap: 30px;
-}
-.chats-opened .container header > *:nth-child(2) > *{
-    font-size: 30px;
-}
-.chats-opened .container footer{
-    /* background-color: red; */
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    padding: 10px 0;
-    height: 50px;
-    display: grid;
-    grid-template-columns: 0.5fr 4fr 0.5fr;
-    gap: 10px;
-    background-color: var(--Dblk);
-}
-.chats-opened .container footer > * {
-    /* background-color: red; */
-    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content:center;
     align-items: center;
     gap: 30px;
 }
-.chats-opened .container footer > * i { 
-    color: gray;
+.mainContainer.first > .container i{
     font-size: 20px;
 }
-.chats-opened .container footer >*:nth-child(1) > * {
-    margin-left: 20px;
+.mainContainer.first > .container img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
 }
-.chats-opened .container footer >*:nth-child(3){
-    justify-self: flex-end;
+.mainContainer.second{
+    background-color: var(--Dblk);
+    position: relative;
 }
-.chats-opened .container footer >*:nth-child(3) > * {
-    margin-right: 20px;
+.mainContainer.second > .container{
+    /* border: 1px solid red; */
 }
-.chats-opened .container footer input{
+.mainContainer.second > .container.first{
+    background-color: var(--Dblk);
+    color: var(--wt);
+    height: 150px;
     width: 100%;
-    background-color: transparent;
-    border: none;
-    padding: 10px;
-    outline: none;
-}
-
-i.whatsapp{
-    font-size: 90px;
-    margin: 10px 0;
-    color: var(--gray);
-}
-.messageContainer{
-    /* background-color: red; */
-    margin: 10px 0;
+    top: 0px;
+    position: sticky;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
+}
+.mainContainer.second > .container.first .content{
+    /* background-color: red; */
+    margin: 2px 0;
+    flex-grow: 1;
+    display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
 }
-.message{
-    background-color: var(--gray);
-    width: 50%;
-    margin: 10px 20px;
-    padding: 10px;
+.icon{
+    padding: 10px 20px;
+    font-size: 22px;
+    /* background-color: green; */
     border-radius: 10px;
-    max-width: 500px;
 }
-.senderMessage{
-    background-color: rgba(0, 75, 128, 0.832);
-    margin-left: auto;
+.mainContainer.second .container.first .content form{
+    width: 100%;
+    outline: none;
+    background-color: var(--Dgray);
+    border: 1px solid var(--gray);
+    border-radius: 10px;
+}
+.mainContainer.second .container.first .content form input{
+    width: 75%;
+    padding: 10px 0;
+    background-color: transparent;
+    border: none;
+    margin-left: 10px;
+    outline: none;
+}
+.mainContainer.second .container.first .content form .btn{
+    width: 18%;
+    padding: 10px 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    text-align: right;
+    color: var(--wt);
 }
 
-.to_bottom{
-    position: fixed;
-    bottom: 100px;
-    right: 50px;
-    background-color: var(--gray);
-    padding: 20px;
-    border: none;
-    border-radius: 10px;
+.mainContainer.third {
+    background-image: linear-gradient(left to right, red,green), url("https://e0.pxfuel.com/wallpapers/497/150/desktop-wallpaper-hopped-the-original-background-if-you-want-to-use-whatsapp-dark-mode-go-to-settings-chats-background-and-use-this-r-whatsapp.jpg") !important;
+}
+
+.mainContainer.second > .container.second{
+    color: var(--wt);
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 20px;
+}
+.mainContainer.second > .container.second .content{
+    /* background-color: red; */
+    margin: 2px 0;
+    flex-grow: 1;
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 10px;
+    align-items: center;
+    padding: 0 10px;
     cursor: default;
 }
-
-
-.settings_popup{
-    display: none;
-    height: 100vh;
-    width: 100vw;
-    max-height: 600px;
-    max-width: 500px;
-    border: none;
-    background-color: red;
-    position: fixed;
-    bottom: 0;
-    left: 10px;
-    border-radius: 10px;
+.mainContainer.second > .container.second .content div > * {
+    font-family: var(--Poppins);
+    font-weight: normal ;
+    /* color: red ; */
 }
