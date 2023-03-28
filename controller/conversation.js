@@ -142,4 +142,62 @@ const unpinChat = async(req,res)=>{
 }
 
 
-module.exports={pinChat,unpinChat}
+// Everything related to getting list of pinned Chats
+const getPinnedChat = async (req,res)=>{
+     
+    // getting the form data
+    // body = req.body
+    let user = req.user
+
+     // query the database for conversationId
+     const conversation = await Conversation.find({
+        $or:[{receiverId: user._id}, {senderId : user._id} ],
+    
+    })
+    
+    // handling error when conversation doesn't exists
+    if(!conversation){
+        res.status(401).json({
+            error : 'DATA_ERROR',
+            status:false,
+            message:`No such conversation`
+        })
+        return;
+    }
+    
+    // user._id === conversation.senderId
+
+
+    try {
+
+        
+    if(conversation){
+        // console.log(user._id,conversation);
+            // if the user is the first to message the friend
+            // Filter the Conversations pinned by the user
+           
+
+            
+            res.status(400).json({
+                status:true,
+                message:`Conversation retrieved successfully`,
+                Data: conversation,
+                totalPinned:conversation.length
+            })
+
+            return   
+    }
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            error : 'UNKNOWN_ERROR',
+            status:false,
+            message:`You've got some errors`
+        })
+        return;
+    }
+}
+
+
+module.exports={pinChat,unpinChat,getPinnedChat}
