@@ -4,9 +4,10 @@ const messageRouter = require('./routes/message');
 const friendRouter = require('./routes/friend');
 const app = express()
 require('dotenv').config();
+const cors = require('cors')
 
 app.use(express.json())
-
+app.use(cors())
 
 
 app.get('/',async(req,res)=>{
