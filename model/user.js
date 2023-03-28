@@ -17,6 +17,14 @@ const userSchema = mongoose.Schema({
         type:String,
         required:true
     },
+    conversations:[
+        {
+            conversationId:{
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'Conversations'
+            }
+        }
+    ],
     posts:[
         {
         postId:{

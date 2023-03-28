@@ -1,6 +1,7 @@
 // getting required components
 const Message = require("../model/message")
 const User = require("../model/user")
+const Conversation = require('../model/conversation')
 
 // Everything related to sending of messages
 const sendMessage = async (req,res)=>{
@@ -38,6 +39,33 @@ const sendMessage = async (req,res)=>{
         return;
     }
 
+    // check qeury the db for conversation
+    const conversation = await Conversation.findOne({
+        senderId:body.senderId.toString() ,
+        receiverId:body.receiverId.toString() ,
+    })
+
+
+    if(!conversation){
+        // create a conversation
+        const newConversation = new Conversation({
+            senderId: body.senderId,
+            receiverId: body.receiverId,
+        })
+
+        const status = await newConversation.save()
+
+
+    // push conversation into the user Object
+    const conversations = await User.findOneAndUpdate(
+        {_id : body.senderId},
+        {
+        $push: {
+            'conversations.conversationId': status._id
+        }},
+        {new:true}
+    )
+    }
 
     // console.log(receiver);
     // return
@@ -56,6 +84,7 @@ const sendMessage = async (req,res)=>{
         return;
     }
 
+    
 
 try {
 

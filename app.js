@@ -4,7 +4,8 @@ const messageRouter = require('./routes/message');
 const friendRouter = require('./routes/friend');
 const app = express()
 require('dotenv').config();
-const cors = require('cors')
+const cors = require('cors');
+const conversationRouter = require('./routes/conversation');
 
 app.use(express.json())
 app.use(cors())
@@ -23,6 +24,9 @@ app.use('/message',messageRouter)
 
 // Everything related to friend routes
 app.use('/friend',friendRouter)
+
+// Everything related to conversation routes
+app.use('/conversation',conversationRouter)
 
 port = process.env.PORT
 app.listen(port,()=>{
