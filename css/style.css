@@ -153,7 +153,7 @@ font-family: 'Romanesco', cursive; */
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    gap: 20px;
+    gap: 5px;
 }
 .mainContainer.second > .container.second .content{
     /* background-color: red; */
@@ -174,7 +174,7 @@ font-family: 'Romanesco', cursive; */
     width: 80%;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 2px;
 }
 .mainContainer.second > .container.second .content div > * {
     font-family: var(--Poppins);
@@ -201,7 +201,7 @@ font-family: 'Romanesco', cursive; */
 }
 
 .opened-chat{
-    background-color: var(--gray)!important;
+    /* background-color: var(--gray)!important; */
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -213,11 +213,64 @@ font-family: 'Romanesco', cursive; */
 }
 .opened-chat header{
     background-color:var(--Dblk);
+    max-height: 50px;
+    border-left: 1px solid var(--blk);
     padding: 10px;
     position: sticky !important;
+    display: flex;
+    align-items: center;
+    color: var(--wt);
     top: 0;
+    justify-content: space-between;
+}
+.opened-chat footer{
+    background-color:var(--Dblk);
+    max-height: 50px;
+    border-left: 1px solid var(--blk);
+    padding: 10px;
+    position: sticky !important;
+    display: flex;
+    align-items: center;
+    color: var(--wt);
+    bottom: 0;
+    justify-content: space-between;
+}
+.opened-chat footer .container:nth-child(1){
+    margin-left: 20px;
+}
+.opened-chat footer .container:nth-child(3){
+    margin-right: 20px;
+}
+.opened-chat footer .container:nth-child(even){
+    flex-grow: 1;
+    padding: 0 20px;
+}
+.opened-chat footer .container:nth-child(even) input{
+    width: 100%;
+    padding-left:  10px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--wt);
+}
+.opened-chat footer .container:nth-child(odd){
+    max-width: 100px;
+    /* background-color: red; */
+    display: flex;
+    gap: 20px;
 
 }
+.opened-chat footer i{
+    font-size: 22px;
+    color: var(--Deepgray);
+}
+.opened-chat header .container{
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 /* .opened-chat section{
     background-color: green;
 } */
