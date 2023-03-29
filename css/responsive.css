@@ -11,4 +11,7 @@
         background-color:var(--DDblk);
         /* overflow-y: hidden; */
     }
+    .mainContainer.second{
+        display: none;
+    }
 }
