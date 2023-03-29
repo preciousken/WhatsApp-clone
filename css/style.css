@@ -229,6 +229,7 @@ font-family: 'Romanesco', cursive; */
 .opened-chat footer{
     background-color:var(--Dblk);
     max-height: 50px;
+    min-height: 50px !important;
     border-left: 1px solid var(--blk);
     padding: 10px;
     position: sticky !important;
