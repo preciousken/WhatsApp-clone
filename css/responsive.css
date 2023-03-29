@@ -22,7 +22,7 @@ MOBILE VIEW HEADER STARTS
  */
 
  .mainContainer.second > .container.mobile{
-    background-color: var(--Dblk);
+    background-color: var(--blk);
     /* border-bottom: 1px solid red; */
     color: var(--wt);
     height: 150px;
