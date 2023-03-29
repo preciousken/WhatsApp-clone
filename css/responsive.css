@@ -11,7 +11,7 @@
         background-color:var(--DDblk);
         /* overflow-y: hidden; */
     }
-    .mainContainer.second{
+    .mainContainer.second > .container.first{
         display: none;
-    }
+     }
 }
