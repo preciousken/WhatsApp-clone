@@ -45,6 +45,7 @@ MOBILE VIEW HEADER STARTS
 .mainContainer.second > .container.mobile .content:nth-child(2){
     justify-content: space-around;
 }
+
 .icon{
     padding: 10px 20px;
     font-size: 22px;
