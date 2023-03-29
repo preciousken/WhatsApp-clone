@@ -3,6 +3,7 @@
     padding: 0;
     font-family: var(--Poppins);
     font-weight: normal;
+    color: var(--wt);
 }
 
 
@@ -270,7 +271,19 @@ font-family: 'Romanesco', cursive; */
     align-items: center;
     gap: 10px;
 }
-
+.opened-chat section{
+    background-image:linear-gradient(to  bottom, var(--gray),var(--gray)), url(https://cdn.wallpapersafari.com/12/90/TyLtep.jpg) !important;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.opened-chat section .message_body:nth-child(1){
+    margin-top: 20px;
+}
+.opened-chat section .message_body{
+    background-color: red;
+    padding: 10px;
+}
 /* .opened-chat section{
     background-color: green;
 } */
