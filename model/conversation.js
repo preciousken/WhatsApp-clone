@@ -16,22 +16,32 @@ const conversationSchema = mongoose.Schema({
     latestMessage:{
         type:String,
     },
-    isPinnedBySender:{
-        type: Boolean,
-        default:false,
-    },
-    isPinnedByReceiver:{
-        type: Boolean,
-        default:false,
-    },
-    isAchievedBySender:{
-        type: Boolean,
-        default:false,
-    },
-    isAchievedByReceiver:{
-        type: Boolean,
-        default:false,
-    }
+    isPinnedBy:[
+        {
+            type:String,
+        }
+    ],
+    isAchievedBy:[
+        {
+            type:String,
+        }
+    ],
+    // isPinnedBySender:{
+    //     type: Boolean,
+    //     default:false,
+    // },
+    // isPinnedByReceiver:{
+    //     type: Boolean,
+    //     default:false,
+    // },
+    // isAchievedBySender:{
+    //     type: Boolean,
+    //     default:false,
+    // },
+    // isAchievedByReceiver:{
+    //     type: Boolean,
+    //     default:false,
+    // }
 })
 
 const Conversation = mongoose.model('Conversation',conversationSchema)

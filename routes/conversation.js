@@ -38,4 +38,13 @@ tokenRequired,
 conversationController.unAchieveConversation
 )
 
+
+// Everything related to getting list of achieved chats
+conversationRouter.get(
+'/getAchievedChats',
+tokenRequired,
+conversationController.getAchievedChat
+)
+
+
 module.exports = conversationRouter
