@@ -276,6 +276,9 @@ font-family: 'Romanesco', cursive; */
 }
 .opened-chat section{
     background-image:linear-gradient(to  bottom, var(--gray),var(--gray)), url(https://cdn.wallpapersafari.com/12/90/TyLtep.jpg) !important;
+    background-position: center;
+    background-size: contain;
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
     gap: 10px;
