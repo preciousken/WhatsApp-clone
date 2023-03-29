@@ -146,7 +146,11 @@ font-family: 'Romanesco', cursive; */
     text-align: right;
     color: var(--wt);
 }
-
+/* //// HIDE MOBILE HEADER ON DESKTOP */
+.mainContainer.second .container.mobile{
+    display: none;
+}
+/* /// MOBILE HEADER HIDING ENDS */
 
 
 .mainContainer.second > .container.second{
