@@ -42,6 +42,9 @@ MOBILE VIEW HEADER STARTS
     align-items: center;
     padding: 0 10px;
 }
+.mainContainer.second > .container.mobile .content:nth-child(2){
+    justify-content: space-around;
+}
 .icon{
     padding: 10px 20px;
     font-size: 22px;
