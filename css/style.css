@@ -54,7 +54,7 @@ font-family: 'Romanesco', cursive; */
 }
 .mainContainer::-webkit-scrollbar{
     background-color: transparent;
-    width: 5px;
+    width: 2px;
 }
 .mainContainer::-webkit-scrollbar-thumb{
     background-color: var(--wt);
@@ -301,7 +301,7 @@ font-family: 'Romanesco', cursive; */
 }
 .opened-chat section .message_body .container.sender{
     margin: auto !important;
-    background-color: var(--grn); 
+    background-color: var(--Deepgray); 
     float:right;
 }
 
