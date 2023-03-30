@@ -364,6 +364,7 @@ color: var(--blk);
 }
 .signupPage .container form .btn{
     background-color: var(--blk);
+    border-radius: 5px;
     width: 100%;
     border: none;
     outline: none;
