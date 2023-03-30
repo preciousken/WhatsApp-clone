@@ -1,4 +1,7 @@
 @media screen and (max-width: 600px) {
+    .backToBrief{
+        display: block !important;
+    }
     .home{
 
         height: 100vh;
