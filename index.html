@@ -22,6 +22,7 @@
 <!-- custom javascript -->
 <script src="js/app.js"></script>
 <script>
+    const session = new Session()
 </script>
 </head>
 <body class="home" >
@@ -389,7 +390,9 @@
                     <img  width="50px" height="50px" style="border-radius: 50%;" src="https://images.pexels.com/photos/15567698/pexels-photo-15567698.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="friend-image">
                     <h3>Precious A.</h3>
                 </div>
-                <div class="container">2</div>
+                <div class="container">
+                    <!--  header container2 stuffs -->
+                </div>
             </header>
             <!-- message body section -->
             <section>
@@ -512,30 +515,25 @@
 
     </div>
 
-    <!-- custom script-->
-     <!-- <script src="js/app.js"></script> -->
-     <!-- <script src="js/app.js"></script> -->
+
      <script>
-        // selecting the required elements from the DOM
+        // NAVIGATING TO THE CHAT ROOM
         const chatBrief = document.querySelectorAll('.mainContainer.second > .container.second .content')
         const home = document.querySelector('.home')
         const backToBrief = document.querySelector('.backToBrief')
 
-
+        
         // Navigate to the chatRoom
         chatBrief.forEach((e)=>{
             e.addEventListener('click',()=>{
-                // console.log(home);
-                home.classList.add('showchatroom')
-                
-        // grid-template-columns: 0px 0 1fr;
+                session.NavigateToChat()
         })
         })
 
 
-        // Navigate back to the message brief page
+        // NAVIGATING back to the message brief page
         backToBrief.addEventListener('click',()=>{
-        home.classList.remove('showchatroom')
+            session.NavigateToMessageBrief()
         })
 
      </script>

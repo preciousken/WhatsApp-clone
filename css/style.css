@@ -101,6 +101,7 @@ font-family: 'Romanesco', cursive; */
     position: sticky;
     display: flex;
     flex-wrap: wrap;
+    transition: all 1s ease-in-out;
     flex-direction: column;
 }
 .mainContainer.second > .container.first .content{
