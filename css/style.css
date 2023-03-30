@@ -352,6 +352,19 @@ font-family: 'Romanesco', cursive; */
     font-size: 20px;
     font-weight: bold;
 }
+.signupPage .container form div{
+    margin-top: 20px;
+}
+.signupPage .container form div p{
+    color: var(--blk);
+    text-align: left;
+    cursor: default;
+}
+.signupPage .container form div small{
+    cursor: pointer;
+    color: var(--blk);
+    font-weight: bold;
+}
 .signupPage .container form input{
 width: 100%;
 padding-top: 10px;
