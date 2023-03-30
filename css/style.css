@@ -317,7 +317,9 @@ font-family: 'Romanesco', cursive; */
     background-color: green;
 } */
 
-
+.hide{
+    display: none !important;
+}
 
 .signupPage{
     position: fixed;

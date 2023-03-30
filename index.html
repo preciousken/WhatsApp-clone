@@ -508,7 +508,7 @@
                     <form>
                         <input type="email" placeholder="Email">
                         <input type="password" placeholder="Password">
-                        <button type="submit" class="btn">Log in</button>
+                        <button type="submit" class="btn login_btn">Log in</button>
                         <div  onmousedown="return false" onselectstart="return false"
                         >
                         <p>Do you have an account? <small>SignUp for free</small></p>
@@ -568,6 +568,13 @@
         // NAVIGATING back to the message brief page
         backToBrief.addEventListener('click',()=>{
             session.NavigateToMessageBrief()
+        })
+
+
+        // EVERYTHING RELATED TO LOGIN
+        document.querySelector('.signup').addEventListener('click',(e)=>{
+            e.preventDefault()
+            session.login()
         })
 
         
