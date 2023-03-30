@@ -345,8 +345,28 @@ font-family: 'Romanesco', cursive; */
 .signupPage .container > * {
     color: var(--blk);
     text-align: center;
+    /* background-color: red; */
+    width: 50%;
 }
 .signupPage .container h2{
     font-size: 20px;
     font-weight: bold;
+}
+.signupPage .container form input{
+width: 100%;
+padding-top: 10px;
+padding-bottom: 10px;
+border: none;
+outline: none;
+border-bottom: 1px solid var(--blk);
+margin-top: 20px;
+color: var(--blk);
+}
+.signupPage .container form .btn{
+    background-color: var(--blk);
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px;
+    margin-top: 20px;
 }
