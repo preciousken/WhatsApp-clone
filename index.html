@@ -19,6 +19,10 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&family=Roboto&family=Roboto+Condensed&family=Romanesco&display=swap" rel="stylesheet">
 
+<!-- custom javascript -->
+<script src="js/app.js"></script>
+<script>
+</script>
 </head>
 <body class="home" >
     
@@ -452,7 +456,7 @@
                  </div>
 
 
-                 <div class="message_body">
+                 <div class="message_body"> 
                     <div class="container sender">
                         <p>Hi precious</p>
                         <small>10:00 AM</small>
@@ -508,6 +512,20 @@
     </div>
 
     <!-- custom script-->
-     <script src="js/app.js"></script>
+     <!-- <script src="js/app.js"></script> -->
+     <!-- <script src="js/app.js"></script> -->
+     <script>
+        const chatBrief = document.querySelectorAll('.mainContainer.second > .container.second .content')
+        chatBrief.forEach((e)=>{
+            e.addEventListener('click',()=>{
+                // selecting the required elements from the DOM
+                const home = document.querySelector('.home')
+                console.log(home);
+                home.classList.add('showchatroom')
+                
+        // grid-template-columns: 0px 0 1fr;
+        })
+        })
+     </script>
 </body>
 </html>

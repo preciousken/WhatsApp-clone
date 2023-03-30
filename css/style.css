@@ -47,6 +47,19 @@ font-family: 'Romanesco', cursive; */
     transition: all 1s ease-in-out;
     /* overflow-y: hidden; */
 }
+.showchatroom{
+
+    height: 100vh;
+    max-height: 100vh;
+    overflow-y: hidden;
+    display: grid;
+    grid-template-columns: 0px 0 1fr !important;
+    grid-template-rows: 1fr;
+    /* background-color:var(--blk); */
+    background-color:var(--DDblk);
+    transition: all 1s ease-in-out;
+    /* overflow-y: hidden; */
+}
 .mainContainer{
     /* border: 1px solid red; */
     overflow-y: scroll;
