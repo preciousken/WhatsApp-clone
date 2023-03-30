@@ -516,17 +516,28 @@
      <!-- <script src="js/app.js"></script> -->
      <!-- <script src="js/app.js"></script> -->
      <script>
+        // selecting the required elements from the DOM
         const chatBrief = document.querySelectorAll('.mainContainer.second > .container.second .content')
+        const home = document.querySelector('.home')
+        const backToBrief = document.querySelector('.backToBrief')
+
+
+        // Navigate to the chatRoom
         chatBrief.forEach((e)=>{
             e.addEventListener('click',()=>{
-                // selecting the required elements from the DOM
-                const home = document.querySelector('.home')
-                console.log(home);
+                // console.log(home);
                 home.classList.add('showchatroom')
                 
         // grid-template-columns: 0px 0 1fr;
         })
         })
+
+
+        // Navigate back to the message brief page
+        backToBrief.addEventListener('click',()=>{
+        home.classList.remove('showchatroom')
+        })
+
      </script>
 </body>
 </html>
