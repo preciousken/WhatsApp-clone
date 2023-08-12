@@ -35,4 +35,3 @@ app.use('*',(req,res)=>{
         res.status(400).json({ message:"Just like that, you completely missed your way 😂😂" })
         return;
 })
-// //
