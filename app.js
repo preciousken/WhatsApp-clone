@@ -16,16 +16,12 @@ app.get('/',async(req,res)=>{
         return;
     })
 
-// Everything related to user routes
 app.use('/user',userRouter);
 
-// Everything related to message routes
 app.use('/message',messageRouter)
 
-// Everything related to friend routes
 app.use('/friend',friendRouter)
 
-// Everything related to conversation routes
 app.use('/conversation',conversationRouter)
 
 port = process.env.PORT
