@@ -2,6 +2,7 @@ const Conversation = require("../model/conversation");
 
 // Everything related to pinning a conversation
 const pinChat = async(req,res)=>{
+
     // getting the form data
     body = req.body
     let user = req.user
