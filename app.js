@@ -13,7 +13,7 @@ app.use(cors())
 
 app.get('/',async(req,res)=>{
         res.status(400).json({ welcome:"The API service is ready for use" })
-        return;//
+        return;
     })
 
 app.use('/user',userRouter);
