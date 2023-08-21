@@ -15,7 +15,7 @@ app.get('/',async(req,res)=>{
         res.status(400).json({ welcome:"The API service is ready for use" })
         return;
     })
-// 
+// ..
 app.use('/user',userRouter);
 
 app.use('/message',messageRouter)
