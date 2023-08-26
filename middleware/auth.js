@@ -2,7 +2,7 @@ require('dotenv').config();
 const jwt = require('jsonwebtoken');
 const User = require('../model/user');
 
-
+// 
 const tokenRequired = async (req,res,next)=>{
     let token = req.headers.whatsapp_token
     if(!token){
